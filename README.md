@@ -19,26 +19,26 @@
 
 
 - 김세희(팀장) 
-
+email : sara940569@gmail.com
 <img src=./doc/pic/kim.jpg width="20%" height="20%">
 
 
 - 강승군 
-
+email : suzzyyy@naver.com
 <img src=./doc/pic/kang.jpg width="20%" height="20%">
 
 
 - 남병욱 
-
+email : skaquddnr21@naver.com
 <img src=./doc/pic/nam.jpg width="20%" height="20%">
 
 
 - 위광진
-
+email : wgj2050@gmail.com
 <img src=./doc/pic/wee.jpg width="20%" height="20%">
 
 
-### III Abstract (영문 요약)
+### III Abstract 
 Many people are attracted to, and interested in those with good voices. There is an entertainer who keeps her popularity with only her voice. That mean is the voice can make a person likable. Some people like to sleep with listening to their favorite DJ's radio broadcast, and nowadays someone listen to a YouTube streamer's or an BJ’s internet broadcast which read books. Our team would like to make a service using the voice synthesis technology related to the tastes of individuals and recent trends.     
 
 We are going to use Text-To-Speech (TTS) and Voice Deep Learning technology based on the functions of existing alarm applications. When a user inputs a text message of a desired content, the application plays the sentence at a time set by the voice of a famous entertainer or a broadcaster whicah user chose. It is this application's differentiation that you can create the alarm of your inputted text message with the voice of entertainer you want, not the pre-recorded alarm like existing alarm application.
