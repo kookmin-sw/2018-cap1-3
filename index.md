@@ -1,8 +1,7 @@
 ### Project Name : Dalarm (달람) 
 캡스톤 3조_ 달달한 콤퓨터 달콤 팀
 
-<img src=./doc/pic/dalarm_logo.png width="20%" height="20%">
-
+![Alt text](/doc/pic/dalarm_logo.png)
 
 
 ### I 프로젝트 개요
@@ -16,19 +15,19 @@
 
 - 김세희(팀장) 
 
-<img src=./doc/pic/kim.jpg width="20%" height="20%">
+![Alt text](/doc/pic/kim.jpg)
 
 - 강승군 
 
-<img src=./doc/pic/kang.jpg width="20%" height="20%">
+![Alt text](/doc/pic/kang.jpg)
 
 - 남병욱 
 
-<img src=./doc/pic/nam.jpg width="20%" height="20%">
+![Alt text](/doc/pic/nam.jpg)
 
 - 위광진 
 
-<img src=./doc/pic/wee.jpg width="20%" height="20%">
+![Alt text](/doc/pic/wee.jpg)
 
 
 ### III Abstract (영문 요약)
