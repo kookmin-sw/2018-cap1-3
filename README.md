@@ -20,26 +20,34 @@
 
 - 김세희(팀장) 
 
-email : sara940569@gmail.com
 <img src=./doc/pic/kim.jpg width="20%" height="20%">
+
+
+email : sara940569@gmail.com
 
 
 - 강승군 
 
-email : suzzyyy@naver.com
 <img src=./doc/pic/kang.jpg width="20%" height="20%">
+
+
+email : suzzyyy@naver.com
 
 
 - 남병욱 
 
-email : skaquddnr21@naver.com
 <img src=./doc/pic/nam.jpg width="20%" height="20%">
+
+
+email : skaquddnr21@naver.com
 
 
 - 위광진
 
-email : wgj2050@gmail.com
 <img src=./doc/pic/wee.jpg width="20%" height="20%">
+
+
+email : wgj2050@gmail.com
 
 
 ### III Abstract 
