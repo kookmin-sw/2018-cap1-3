@@ -1,7 +1,7 @@
 **팀페이지 주소** -> https://kookmin-sw.github.io/2018-cap1-3/
 
 
-### Dalarm (달람) 
+### Project Name : Dalarm (달람) 
 달달한 콤퓨터 달콤 팀
 
 
