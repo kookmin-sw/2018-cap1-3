@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+**팀페이지 주소** -> https://kookmin-sw.github.io/2018-cap1-3/
 
-You can use the [editor on GitHub](https://github.com/kookmin-sw/cap-template/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+### 1. 프로젝트 소개
+기존의 알람 어플의 기능을 기본으로 TTS(Text-To-Speech)와 목소리 학습 딥러닝 기술을 사용하여 내가 원하는 내용의 텍스트 메시지를 주면 그 내용을 유명 연예인의 목소리로 바꾸어서 원하는 시간에 맞춰서 재생해주는 어플이다. 기존에 존재하는 연예인 알람과는 다르게 미리 녹음 되어 있는 것을 재생하는 것이 아니라 내가 원하는 내용을 내가 만들어서 재생 할 수 있다. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 2. 소개 영상
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 3. 팀 소개
 
-```markdown
-Syntax highlighted code block
+김세희(팀장) :
 
-# Header 1
-## Header 2
-### Header 3
+강승군 :
 
-- Bulleted
-- List
+남병욱 :
 
-1. Numbered
-2. List
+위광진 :
 
-**Bold** and _Italic_ and `Code` text
+### 4. 결과 영상
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kookmin-sw/cap-template/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### 5. 기타
