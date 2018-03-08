@@ -1,10 +1,11 @@
 **팀페이지 주소** -> https://kookmin-sw.github.io/2018-cap1-3/
 
 
-### Project Nme : Dalarm (달람) 
+### Project Name : Dalarm (달람) 
 캡스톤 3조_ 달달한 콤퓨터 달콤 팀
 
 <img src=./doc/pic/dalarm_logo.png width="20%" height="20%">
+
 
 
 ### I 프로젝트 개요
