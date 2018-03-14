@@ -24,6 +24,7 @@
 
 
 e-mail : sara940569@gmail.com
+
 role : application UI design
 
 
@@ -33,6 +34,7 @@ role : application UI design
 
 
 e-mail : suzzyyy@naver.com
+
 role : build server
 
 
@@ -42,6 +44,7 @@ role : build server
 
 
 e-mail : skaquddnr21@naver.com
+
 role : application Implementation
 
 
@@ -51,6 +54,7 @@ role : application Implementation
 
 
 e-mail : wgj2050@gmail.com
+
 role : Deep Learning Research
 
 
