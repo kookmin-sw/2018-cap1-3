@@ -30,7 +30,7 @@ role : application UI design
 
 e-mail : suzzyyy@naver.com
 
-role : build server
+role : build Server
 
 
 - 남병욱 
@@ -61,6 +61,6 @@ We are going to use Text-To-Speech (TTS) and Voice Deep Learning technology base
 
 ### IV 소개 영상
 
-URL : https://www.youtube.com/watch?v=NLgzlazFzjI&feature=youtu.be
+URL : <https://www.youtube.com/watch?v=NLgzlazFzjI&feature=youtu.be>
 
 ### V  결과 영상
