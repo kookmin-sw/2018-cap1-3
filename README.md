@@ -60,6 +60,6 @@ We are going to use Text-To-Speech (TTS) and Voice Deep Learning technology base
 
 <video width="640" height="360" controls>
   <source src=./doc/계획서발표-Dalarm(달람).mp4 type="video/mp4">
- URL : https://www.youtube.com/watch?v=NLgzlazFzjI&feature=youtu.be
+URL : https://www.youtube.com/watch?v=NLgzlazFzjI&feature=youtu.be
 
 ### V  결과 영상
