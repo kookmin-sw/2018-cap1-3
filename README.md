@@ -23,7 +23,8 @@
 <img src=./doc/pic/kim.jpg width="20%" height="20%">
 
 
-email : sara940569@gmail.com
+e-mail : sara940569@gmail.com
+role : application UI design
 
 
 - 강승군 
@@ -31,7 +32,8 @@ email : sara940569@gmail.com
 <img src=./doc/pic/kang.jpg width="20%" height="20%">
 
 
-email : suzzyyy@naver.com
+e-mail : suzzyyy@naver.com
+role : build server
 
 
 - 남병욱 
@@ -39,7 +41,8 @@ email : suzzyyy@naver.com
 <img src=./doc/pic/nam.jpg width="20%" height="20%">
 
 
-email : skaquddnr21@naver.com
+e-mail : skaquddnr21@naver.com
+role : application Implementation
 
 
 - 위광진
@@ -47,7 +50,8 @@ email : skaquddnr21@naver.com
 <img src=./doc/pic/wee.jpg width="20%" height="20%">
 
 
-email : wgj2050@gmail.com
+e-mail : wgj2050@gmail.com
+role : Deep Learning Research
 
 
 ### III Abstract 
