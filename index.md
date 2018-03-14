@@ -18,7 +18,9 @@
 ![Alt text](/doc/pic/kim.jpg)
 
 
-email : sara940569@gmail.com
+e-mail : sara940569@gmail.com
+
+role : application UI design
 
 
 - 강승군 
@@ -26,7 +28,9 @@ email : sara940569@gmail.com
 ![Alt text](/doc/pic/kang.jpg)
 
 
-email : suzzyyy@naver.com
+e-mail : suzzyyy@naver.com
+
+role : build server
 
 
 - 남병욱 
@@ -34,7 +38,9 @@ email : suzzyyy@naver.com
 ![Alt text](/doc/pic/nam.jpg)
 
 
-email : skaquddnr21@naver.com
+e-mail : skaquddnr21@naver.com
+
+role : application Implementation
 
 
 - 위광진 
@@ -42,7 +48,9 @@ email : skaquddnr21@naver.com
 ![Alt text](/doc/pic/wee.jpg)
 
 
-email : wgj2050@gmail.com
+e-mail : wgj2050@gmail.com
+
+role : Deep Learning Research
 
 
 ### III Abstract 
