@@ -18,7 +18,7 @@ USE `dalarm` ;
 -- Table `dalarm`.`alarm`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dalarm`.`alarm` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `hour` INT NULL,
   `minutes` INT NULL,
   `ampm` VARCHAR(45) NULL,
@@ -30,7 +30,7 @@ ENGINE = InnoDB;
 -- Table `dalarm`.`inform`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dalarm`.`inform` (
-  `id` INT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `text` VARCHAR(45) NULL,
   `celebrity` VARCHAR(45) NULL,
   `alarm_id` INT NOT NULL,
@@ -48,7 +48,7 @@ ENGINE = InnoDB;
 -- Table `dalarm`.`voice`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dalarm`.`voice` (
-  `id` INT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `voice_path` VARCHAR(45) NULL,
   `alarm_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -62,15 +62,15 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `dalarm`.`ch`
+-- Table `dalarm`.`switch`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `dalarm`.`ch` (
-  `id` INT NULL,
-  `onoff` TINYINT(1) NOT NULL,
+CREATE TABLE IF NOT EXISTS `dalarm`.`switch` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `onoff` TINYINT NOT NULL,
   `alarm_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_ch_alarm1_idx` (`alarm_id` ASC),
-  CONSTRAINT `fk_ch_alarm1`
+  INDEX `fk_switch_alarm1_idx` (`alarm_id` ASC),
+  CONSTRAINT `fk_switch_alarm1`
     FOREIGN KEY (`alarm_id`)
     REFERENCES `dalarm`.`alarm` (`id`)
     ON DELETE NO ACTION
@@ -82,7 +82,7 @@ ENGINE = InnoDB;
 -- Table `dalarm`.`days`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dalarm`.`days` (
-  `id` INT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `days` VARCHAR(45) NULL,
   `alarm_id` INT NOT NULL,
   PRIMARY KEY (`id`),
