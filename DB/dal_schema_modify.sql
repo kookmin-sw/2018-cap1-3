@@ -1,3 +1,5 @@
+-- 기존 스키마에 필요했던 테이블 몇 개를 빼서 간소화시킴 
+-- (알람을 개발하면서 어플에서 사용자가 입력한 시간에 울리는 기능을 구현했기 때문에 테이블이 필요없어짐)
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
