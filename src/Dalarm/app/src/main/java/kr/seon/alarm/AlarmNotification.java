@@ -57,7 +57,19 @@ public class AlarmNotification extends Activity
 
         readPreferences();
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.sound);
+        String url = "http://IP주소/mp3파일이름";        
+        MediaPlayer mediaPlayer = new MediaPlayer();        
+        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);        
+        try {            
+            mediaPlayer.setDataSource(url);        
+        } catch (IOException e) {            
+            e.printStackTrace();        
+        }        
+        try {            
+            mediaPlayer.prepare();
+        } catch (IOException e) {            
+            e.printStackTrace();        
+        }        
         mediaPlayer.start();
 
         mRingtone = RingtoneManager.getRingtone(getApplicationContext(), mAlarmSound);
