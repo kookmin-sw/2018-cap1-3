@@ -11,11 +11,32 @@
         android:layout_width="fill_parent"
         android:layout_weight="1">
 
+
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:padding="8sp"
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:paddingTop="8sp"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/voice_checkbox_inna"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:text="유인나" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:id="@+id/textView_result"/>
+            </LinearLayout>
 
             <TextView
                 style="@style/widget"

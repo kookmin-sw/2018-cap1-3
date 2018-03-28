@@ -27,6 +27,4 @@
                     app:srcCompat="@drawable/ic_add_24dp"/>
         </FrameLayout>
 
-
-
 </LinearLayout>

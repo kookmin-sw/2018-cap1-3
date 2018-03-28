@@ -29,12 +29,15 @@ public class Alarm implements Comparable<Alarm>
     public static final int NEVER = 0;
     public static final int EVERY_DAY = 0x7f;
 
+    public long mTime_;//시간
+
     public Alarm(Context context)
     {
         mContext = context;
         mId = 0;
         mTitle = "";
         mDate = System.currentTimeMillis();
+        mTime_ = mDate / (1000 * 60 * 60);//시간
         mEnabled = true;
         mOccurence = ONCE;
         mDays = EVERY_DAY;

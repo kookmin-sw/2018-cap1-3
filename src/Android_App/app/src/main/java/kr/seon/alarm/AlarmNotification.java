@@ -97,6 +97,7 @@ public class AlarmNotification extends Activity
 
         mTextView.setText(mAlarm.getTitle());
 
+
         mTimerTask = new PlayTimerTask();
         mTimer = new Timer();
         mTimer.schedule(mTimerTask, mPlayTime);
