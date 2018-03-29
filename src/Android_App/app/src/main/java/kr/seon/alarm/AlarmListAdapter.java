@@ -23,7 +23,6 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,8 +31,6 @@ import android.widget.BaseAdapter;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-
-import butterknife.Bind;
 
 class AlarmListAdapter extends BaseAdapter
 {
@@ -128,7 +125,7 @@ class AlarmListAdapter extends BaseAdapter
       holder = new ViewHolder();
       holder.title = (TextView) convertView.findViewById(R.id.item_title);
       holder.details = (TextView) convertView.findViewById(R.id.item_details);
-      //on_off_switch nbw
+      //on_off_switch
       holder.mSwitch = (Switch) convertView.findViewById(R.id.on_off_switch);
 
       convertView.setTag(holder);
@@ -204,7 +201,7 @@ class AlarmListAdapter extends BaseAdapter
   {
     TextView title;
     TextView details;
-    //on_off_switch nbw
+    //on_off_switch
     Switch mSwitch;
   }
 }

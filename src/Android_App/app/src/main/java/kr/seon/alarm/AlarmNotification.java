@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -18,8 +19,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -37,6 +40,7 @@ public class AlarmNotification extends Activity
     private DateTime mDateTime;
     private TextView mTextView;
     private PlayTimerTask mTimerTask;
+    private ImageView imageView;
 
     private MediaPlayer mediaPlayer;
 
@@ -54,10 +58,27 @@ public class AlarmNotification extends Activity
 
         mDateTime = new DateTime(this);
         mTextView = (TextView)findViewById(R.id.alarm_title_text);
+        imageView = (ImageView)findViewById(R.id.img_voice);
+        //차후에 목소리 모델이 2이상 준비 되면 이미지를 그 모델의 사진으로 교체할 예정
+        imageView.setImageResource(R.drawable.img_inna);
 
         readPreferences();
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.sound);
+        //알람 종료시 강제 종료 되는 오류 해결
+        String url = "http://203.246.112.106/sound.mp3";
+        //MediaPlayer mediaPlayer = new MediaPlayer(); //위에 MediaPlayer가 있어서 이거 주석처리 했어요.
+        mediaPlayer = new MediaPlayer();
+        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        try {
+             mediaPlayer.setDataSource(url);
+        } catch (IOException e) {
+             e.printStackTrace();
+        }
+        try {
+             mediaPlayer.prepare();
+        } catch (IOException e) {
+             e.printStackTrace();
+        }
         mediaPlayer.start();
 
         mRingtone = RingtoneManager.getRingtone(getApplicationContext(), mAlarmSound);

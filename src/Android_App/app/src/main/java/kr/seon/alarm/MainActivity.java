@@ -26,13 +26,10 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class MainActivity extends Activity {
 
     private final String TAG = "Alarm";
-    private final String MST = "switch_test";
 
     private ListView mAlarmList;
     private AlarmListAdapter mAlarmListAdapter;
     private Alarm mCurrentAlarm;
-
-//    public Switch mSwitch;
 
     private final int NEW_ALARM_ACTIVITY = 0;
     private final int EDIT_ALARM_ACTIVITY = 1;
@@ -56,31 +53,12 @@ public class MainActivity extends Activity {
 
         mAlarmList = (ListView) findViewById(R.id.alarm_list);
 
-//        mSwitch = (Switch) findViewById(R.id.on_off_switch);
 
         mAlarmListAdapter = new AlarmListAdapter(this);
         mAlarmList.setAdapter(mAlarmListAdapter);
         mAlarmList.setOnItemLongClickListener(mListOnItemLongClickListener);
         mAlarmList.setOnItemClickListener(mListOnItemClickListener);
         registerForContextMenu(mAlarmList);
-
-//        mSwitch.setChecked(mCurrentAlarm.getEnabled());
-//
-//        mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//                if(mCurrentAlarm.getEnabled()==true) {
-//                    mAlarmListAdapter.update(mCurrentAlarm);
-//                    mAlarmListAdapter.save();
-//                }
-//                else {
-//                    mAlarmListAdapter.cancelAlarm(mCurrentAlarm);
-//                    mAlarmListAdapter.save();
-//                }
-//            }
-//        });
-
-
 
         mCurrentAlarm = null;
 
