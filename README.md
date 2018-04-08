@@ -4,7 +4,7 @@
 ### Project Name : Dalarm (달람) 
 캡스톤 3조_ 달달한 콤퓨터 달콤 팀
 
-<img src=./doc/pic/dalarm_logo.png width="20%" height="20%">
+<img src=./doc/pic/dalarm_logo.png width="40%" height="40%">
 
 
 
