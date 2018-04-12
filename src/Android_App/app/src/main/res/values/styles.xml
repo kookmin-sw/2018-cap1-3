@@ -12,39 +12,26 @@
         <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
-    <style name="AlarmDayToggle" parent="SelectableButton">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:textAllCaps">true</item>
+    <style name="widget">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
-    <style name="AlarmVibrateToggle" parent="SelectableButton">
-        <item name="android:layout_width">@dimen/vibrate_toggle_size</item>
-        <item name="android:layout_height">match_parent</item>
+
+    <style name="edit_button">
+        <item name="android:layout_width">0sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@android:drawable/btn_default</item>
+    </style>
+
+    <style name="list_item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="SelectableButton">
         <item name="android:background">?selectableItemBackground</item>
-    </style>
-
-    <style name="BaseLabel" parent="TextAppearance.AppCompat">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:hint">@string/label</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:textSize">@dimen/text_size_subhead</item>
-    </style>
-
-    <style name="Divider">
-        <!-- This is robust against dark/light theme changes. -->
-        <!-- Normally not visible in bottom sheets; workaround is to manually change the background color of the divider-->
-        <item name="android:background">?android:attr/listDivider</item>
-    </style>
-
-    <style name="Divider.Horizontal">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
+>>>>>>> alarm_play_delete
     </style>
 
 </resources>
