@@ -22,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <!-- MainActivity가 사라져서 에러가 나서 다시 추가함 -->
         <activity android:name=".MainActivity"/>
         <activity android:name=".removeActivity"></activity>

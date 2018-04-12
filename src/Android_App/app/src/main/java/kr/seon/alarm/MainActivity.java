@@ -4,7 +4,6 @@ import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,26 +41,26 @@ public class MainActivity extends AppCompatActivity {
             updateLabel();
         }
     };
-        private TimePickerDialog.OnTimeSetListener sTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+    private TimePickerDialog.OnTimeSetListener sTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
 
-            @Override
-            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        @Override
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                Time.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                Log.d("check","1 = " + hourOfDay);
-                Time.set(Calendar.MINUTE, minute);
-                Log.d("check", "2 = " + minute);
-                Time.set(Calendar.SECOND, 0);
+            Time.set(Calendar.HOUR_OF_DAY, hourOfDay);
+            Log.d("check","1 = " + hourOfDay);
+            Time.set(Calendar.MINUTE, minute);
+            Log.d("check", "2 = " + minute);
+            Time.set(Calendar.SECOND, 0);
 
-                updateLabel();
+            updateLabel();
 
-            }
-        };
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_alarm);
 
         Time = Calendar.getInstance();
 
