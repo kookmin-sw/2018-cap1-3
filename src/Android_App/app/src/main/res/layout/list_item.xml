@@ -15,12 +15,14 @@
         android:textColor="@color/alarm_details"
         android:textStyle="bold"/>
 
-    <android.support.v7.widget.SwitchCompat
+    <Switch
         android:id="@+id/on_off_switch"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical|end"
-        android:focusable="false"/>
+        android:focusable="false"
+        android:checked="true"/>
+
   </FrameLayout>
     <TextView
         style="@style/list_item"

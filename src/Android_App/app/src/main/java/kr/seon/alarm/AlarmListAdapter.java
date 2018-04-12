@@ -23,12 +23,17 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
+
+import butterknife.Bind;
 
 class AlarmListAdapter extends BaseAdapter
 {
@@ -113,33 +118,51 @@ class AlarmListAdapter extends BaseAdapter
     return position;
   }
 
-  public View getView(int position, View convertView, ViewGroup parent)
-  {
+  public View getView(int position, View convertView, ViewGroup parent) {
     ViewHolder holder;
-    Alarm alarm = mDataSource.get(position);
+    final Alarm alarm = mDataSource.get(position);
 
-    if (convertView == null)
-    {
+    if (convertView == null) {
       convertView = mInflater.inflate(R.layout.list_item, null);
 
       holder = new ViewHolder();
-      holder.title = (TextView)convertView.findViewById(R.id.item_title);
-      holder.details = (TextView)convertView.findViewById(R.id.item_details);
+      holder.title = (TextView) convertView.findViewById(R.id.item_title);
+      holder.details = (TextView) convertView.findViewById(R.id.item_details);
+      //on_off_switch nbw
+      holder.mSwitch = (Switch) convertView.findViewById(R.id.on_off_switch);
 
       convertView.setTag(holder);
+    } else {
+      holder = (ViewHolder) convertView.getTag();
     }
-    else
-    {
-      holder = (ViewHolder)convertView.getTag();
-    }
-  
+
     holder.title.setText(alarm.getTitle());
     holder.details.setText(mDateTime.formatDetails(alarm) + (alarm.getEnabled() ? "" : " [disabled]"));
+    holder.mSwitch.setChecked(alarm.getEnabled());
 
     if (alarm.getOutdated())
       holder.title.setTextColor(mColorOutdated);
     else
       holder.title.setTextColor(mColorActive);
+
+    //on_off_switch 사용코드
+
+    Switch onoffSwitch = (Switch) convertView.findViewById(R.id.on_off_switch);
+    onoffSwitch.setTag(position);
+    onoffSwitch.setChecked(alarm.getEnabled());
+    onoffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+      @Override
+      public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        if(b == true) {
+          setAlarm(alarm);
+          save();
+        }
+        else {
+          cancelAlarm(alarm);
+          save();
+        }
+      }
+    });
 
     return convertView;
   }
@@ -167,7 +190,7 @@ class AlarmListAdapter extends BaseAdapter
     }
   }
 
-  private void cancelAlarm(Alarm alarm)
+  public void cancelAlarm(Alarm alarm)
   {
     PendingIntent sender;
     Intent intent;
@@ -181,6 +204,8 @@ class AlarmListAdapter extends BaseAdapter
   {
     TextView title;
     TextView details;
+    //on_off_switch nbw
+    Switch mSwitch;
   }
 }
 

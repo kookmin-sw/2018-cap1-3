@@ -7,27 +7,32 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+//import android.view.ContextMenu;
+//import android.view.Menu;
+//import android.view.MenuInflater;
+//import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.Switch;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-
 public class MainActivity extends Activity {
 
     private final String TAG = "Alarm";
+    private final String MST = "switch_test";
 
     private ListView mAlarmList;
     private AlarmListAdapter mAlarmListAdapter;
     private Alarm mCurrentAlarm;
+
+//    public Switch mSwitch;
 
     private final int NEW_ALARM_ACTIVITY = 0;
     private final int EDIT_ALARM_ACTIVITY = 1;
@@ -51,13 +56,34 @@ public class MainActivity extends Activity {
 
         mAlarmList = (ListView) findViewById(R.id.alarm_list);
 
+//        mSwitch = (Switch) findViewById(R.id.on_off_switch);
+
         mAlarmListAdapter = new AlarmListAdapter(this);
         mAlarmList.setAdapter(mAlarmListAdapter);
         mAlarmList.setOnItemLongClickListener(mListOnItemLongClickListener);
         mAlarmList.setOnItemClickListener(mListOnItemClickListener);
         registerForContextMenu(mAlarmList);
 
+//        mSwitch.setChecked(mCurrentAlarm.getEnabled());
+//
+//        mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//                if(mCurrentAlarm.getEnabled()==true) {
+//                    mAlarmListAdapter.update(mCurrentAlarm);
+//                    mAlarmListAdapter.save();
+//                }
+//                else {
+//                    mAlarmListAdapter.cancelAlarm(mCurrentAlarm);
+//                    mAlarmListAdapter.save();
+//                }
+//            }
+//        });
+
+
+
         mCurrentAlarm = null;
+
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
