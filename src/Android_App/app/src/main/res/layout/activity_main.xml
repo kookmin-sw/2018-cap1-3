@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="4sp"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <ListView
+                    style="@style/widget"
+                    android:id="@+id/alarm_list"
+                    android:layout_weight="1"/>
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/add_alarm"
+                    android:onClick="onAddAlarmClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:tint="@android:color/white"
+                    app:srcCompat="@drawable/ic_add_24dp"/>
+        </FrameLayout>
+
+</LinearLayout>

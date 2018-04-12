@@ -2,7 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "24.0.3"
+    buildToolsVersion '27.0.3'
+
     defaultConfig {
         applicationId "kr.seon.alarm"
         minSdkVersion 18
