@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 //import android.view.ContextMenu;
 //import android.view.Menu;
@@ -14,33 +15,36 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.CompoundButton;
 import android.widget.ListView;
-import android.widget.Switch;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import butterknife.Bind;
+import butterknife.OnCheckedChanged;
+import butterknife.OnTouch;
+
+
 public class MainActivity extends Activity {
 
     private final String TAG = "Alarm";
-    private final String MST = "switch_test";
 
     private ListView mAlarmList;
     private AlarmListAdapter mAlarmListAdapter;
     private Alarm mCurrentAlarm;
 
-//    public Switch mSwitch;
-
     private final int NEW_ALARM_ACTIVITY = 0;
     private final int EDIT_ALARM_ACTIVITY = 1;
     private final int PREFERENCES_ACTIVITY = 2;
 
+    @Bind(R.id.on_off_switch) SwitchCompat mSwitch;
+
 //    private final int CONTEXT_MENU_EDIT = 0;
 //    private final int CONTEXT_MENU_DELETE = 1;
 //    private final int CONTEXT_MENU_DUPLICATE = 2;
+
     public int del_pos;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -52,35 +56,15 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_alarm);
+        setContentView(R.layout.activity_main);
 
         mAlarmList = (ListView) findViewById(R.id.alarm_list);
-
-//        mSwitch = (Switch) findViewById(R.id.on_off_switch);
 
         mAlarmListAdapter = new AlarmListAdapter(this);
         mAlarmList.setAdapter(mAlarmListAdapter);
         mAlarmList.setOnItemLongClickListener(mListOnItemLongClickListener);
         mAlarmList.setOnItemClickListener(mListOnItemClickListener);
         registerForContextMenu(mAlarmList);
-
-//        mSwitch.setChecked(mCurrentAlarm.getEnabled());
-//
-//        mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//                if(mCurrentAlarm.getEnabled()==true) {
-//                    mAlarmListAdapter.update(mCurrentAlarm);
-//                    mAlarmListAdapter.save();
-//                }
-//                else {
-//                    mAlarmListAdapter.cancelAlarm(mCurrentAlarm);
-//                    mAlarmListAdapter.save();
-//                }
-//            }
-//        });
-
-
 
         mCurrentAlarm = null;
 
@@ -131,6 +115,14 @@ public class MainActivity extends Activity {
             mAlarmListAdapter.onSettingsUpdated();
         }
     }
+//
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.menu, menu);
+//        return true;
+//    }
+//
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {
 //        if (R.id.menu_settings == item.getItemId()) {
@@ -181,10 +173,32 @@ public class MainActivity extends Activity {
 //        return true;
 //    }
 
+    //toggleë²„íŠ¼ êµ¬í˜„
+    @OnTouch(R.id.on_off_switch)
+    boolean slide(MotionEvent event) {
+        if (event.getActionMasked() == MotionEvent.ACTION_MOVE) {
+            mSwitch.setPressed(true); // needed so the OnCheckedChange event calls through
+        }
+        return false; // proceed as usual
+    }
+
+    @OnCheckedChanged(R.id.on_off_switch)
+    void toggle(boolean checked) {
+
+        if (mSwitch.isPressed()) {
+            if(mSwitch.isChecked()==true){
+                mCurrentAlarm.setEnabled(true);
+            }
+            else if (mSwitch.isChecked()==false) {
+                mCurrentAlarm.setEnabled(false);
+            }
+        }
+    }
+
     private AdapterView.OnItemLongClickListener mListOnItemLongClickListener = new AdapterView.OnItemLongClickListener() {
         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-            new AlertDialog.Builder(MainActivity.this).setTitle("»èÁ¦").setMessage("»èÁ¦ÇÏ½Ã°Ú½À´Ï±î?")
-                    .setPositiveButton("¿¹, mDelClick).setNegativeButton("¾Æ´Ï¿À, mDelClick).show();
+            new AlertDialog.Builder(MainActivity.this).setTitle("ì‚­ì œ").setMessage("ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ")
+                    .setPositiveButton("ì˜ˆ", mDelClick).setNegativeButton("ì•„ë‹ˆì˜¤", mDelClick).show();
             return false;
         }
     };
