@@ -76,55 +76,6 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
-                <ToggleButton
-                    android:id="@+id/day0"
-                    style="@style/AlarmDayToggle"
-                    android:textOn="일"
-                    android:textOff="해제"/>
-
-                <ToggleButton
-                    android:id="@+id/day1"
-                    style="@style/AlarmDayToggle"
-                    android:textOn="월"
-                    android:textOff="해제"/>
-
-                <ToggleButton
-                    android:id="@+id/day2"
-                    style="@style/AlarmDayToggle"
-                    android:textOn="화"
-                    android:textOff="해제"/>
-
-                <ToggleButton
-                    android:id="@+id/day3"
-                    style="@style/AlarmDayToggle"
-                    android:textOn="수"
-                    android:textOff="해제"/>
-
-                <ToggleButton
-                    android:id="@+id/day4"
-                    style="@style/AlarmDayToggle"
-                    android:textOn="목"
-                    android:textOff="해제"/>
-
-                <ToggleButton
-                    android:id="@+id/day5"
-                    style="@style/AlarmDayToggle"
-                    android:textOn="금"
-                    android:textOff="해제"/>
-
-                <ToggleButton
-                    android:id="@+id/day6"
-                    style="@style/AlarmDayToggle"
-                    android:textOn="토"
-                    android:textOff="해제"/>
-            </LinearLayout>
-
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:paddingTop="8sp"
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
                 <Button
                     android:id="@+id/date_button"
                     android:layout_weight="2"

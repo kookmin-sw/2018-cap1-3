@@ -21,7 +21,7 @@
         android:layout_height="48dp"
         android:layout_gravity="center_vertical|end"
         android:focusable="false"
-        android:checked="true"/>
+        android:checked="true" />
 
   </FrameLayout>
     <TextView

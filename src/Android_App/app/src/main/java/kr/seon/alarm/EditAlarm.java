@@ -115,14 +115,6 @@ public class EditAlarm extends Activity {
         mOccurence = (Spinner) findViewById(R.id.occurence_spinner);
         mDateButton = (Button) findViewById(R.id.date_button);
         mTimeButton = (Button) findViewById(R.id.time_button);
-        //ToggleButton 요일 선택 기능
-        Day_0 = (ToggleButton) findViewById(R.id.day0);
-        Day_1 = (ToggleButton) findViewById(R.id.day1);
-        Day_2 = (ToggleButton) findViewById(R.id.day2);
-        Day_3 = (ToggleButton) findViewById(R.id.day3);
-        Day_4 = (ToggleButton) findViewById(R.id.day4);
-        Day_5 = (ToggleButton) findViewById(R.id.day5);
-        Day_6 = (ToggleButton) findViewById(R.id.day6);
 
         mAlarm = new Alarm(this);
         mAlarm.fromIntent(getIntent());
@@ -178,23 +170,6 @@ public class EditAlarm extends Activity {
         public void handleMessage(Message msg) {
 
         }
-    }
-
-    //요일 알람 설정 코드
-    @OnClick({R.id.day0,R.id.day1,R.id.day2,R.id.day3,R.id.day4,R.id.day5,R.id.day6})
-    void onDayToggled(ToggleButton view) {
-
-        Calendar cal = Calendar.getInstance();
-        int numDay = cal.get(Calendar.DAY_OF_WEEK);//오늘의 요일 일요일 = 1
-
-        boolean[] week = new boolean[] { Day_0.isChecked(), Day_1.isChecked(), Day_2.isChecked(), Day_3.isChecked(),
-                Day_4.isChecked(), Day_5.isChecked(), Day_6.isChecked() };
-        if(week[numDay-1]) {
-            //알람 설정 코드
-            //설정된 알람 요일을 기준으로 계산 하는 방법을 사용하여 코딩
-            //그렇게 되면 설정한 요일 마다 리스트가 최대 7개까지 만들어짐
-        }
-
     }
 
     @Override

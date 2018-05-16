@@ -144,17 +144,19 @@ class AlarmListAdapter extends BaseAdapter
 
     //on_off_switch 사용코드
 
-    Switch onoffSwitch = (Switch) convertView.findViewById(R.id.on_off_switch);
+    final Switch onoffSwitch = (Switch) convertView.findViewById(R.id.on_off_switch);
     onoffSwitch.setTag(position);
     onoffSwitch.setChecked(alarm.getEnabled());
     onoffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
       public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         if(b == true) {
+          alarm.setEnabled(true);
           setAlarm(alarm);
           save();
         }
         else {
+          alarm.setEnabled(false);
           cancelAlarm(alarm);
           save();
         }
@@ -205,4 +207,3 @@ class AlarmListAdapter extends BaseAdapter
     Switch mSwitch;
   }
 }
-
