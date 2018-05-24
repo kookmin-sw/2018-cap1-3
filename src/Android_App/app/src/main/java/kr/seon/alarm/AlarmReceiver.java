@@ -8,7 +8,7 @@ import android.util.Log;
 
 public class AlarmReceiver extends BroadcastReceiver
 {
-    private final String TAG = "Alarm";
+    private final String TAG = "Aalarm";
 
     @Override
     public void onReceive(Context context, Intent intent)

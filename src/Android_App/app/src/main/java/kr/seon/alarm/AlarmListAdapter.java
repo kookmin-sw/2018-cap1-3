@@ -23,6 +23,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -134,6 +135,7 @@ class AlarmListAdapter extends BaseAdapter
     }
 
     holder.title.setText(alarm.getTitle());
+    holder.title.setTextColor(Color.WHITE);
     holder.details.setText(mDateTime.formatDetails(alarm) + (alarm.getEnabled() ? "" : " [disabled]"));
     holder.mSwitch.setChecked(alarm.getEnabled());
 

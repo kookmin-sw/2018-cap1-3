@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">#cca1d6</item>
     </style>
 
     <style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar">
@@ -24,7 +24,7 @@
         <item name="android:background">@android:drawable/btn_default</item>
     </style>
 
-    <style name="list_item">
+    <style name="list_item" background="#dfd0e9">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>

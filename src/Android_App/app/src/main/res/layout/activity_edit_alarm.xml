@@ -4,17 +4,32 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/white">
+    android:background="#dfd0e9">
+
+    <CheckBox
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:buttonTint="@color/white"
+        android:text="손석희"
+        android:textColor="@color/white" />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="9dp"
+        android:buttonTint="@color/white"
+        android:text="박명수"
+        android:textColor="@color/white" />
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="0dp"
         android:layout_width="fill_parent"
         android:layout_weight="1">
 
-
-
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:padding="8sp"
+            android:padding="6sp"
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
@@ -27,10 +42,12 @@
 
                 <CheckBox
                     android:id="@+id/voice_checkbox_inna"
+                    android:buttonTint="@color/white"
                     android:layout_weight="1"
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
-                    android:text="유인나" />
+                    android:text="유인나"
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -40,7 +57,8 @@
 
             <TextView
                 style="@style/widget"
-                android:text="내용" />
+                android:text="내용"
+                android:textColor="@color/white"/>
 
             <EditText
                 style="@style/widget"
@@ -56,10 +74,12 @@
 
                 <CheckBox
                     android:id="@+id/alarm_checkbox"
+                    android:buttonTint="@color/white"
                     android:layout_weight="1"
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
-                    android:text="Alarm" />
+                    android:text="Alarm"
+                    android:textColor="@color/white"/>
 
                 <Spinner
                     android:id="@+id/occurence_spinner"
@@ -78,6 +98,7 @@
 
                 <Button
                     android:id="@+id/date_button"
+                    android:background="#dfd0e9"
                     android:layout_weight="2"
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
@@ -86,6 +107,7 @@
 
                 <Button
                     android:id="@+id/time_button"
+                    android:background="#dfd0e9"
                     android:layout_weight="1"
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
@@ -107,13 +129,17 @@
         <Button
             style="@style/edit_button"
             android:id="@+id/done"
+            android:background="#dfd0e9"
             android:text="Done"
+            android:textColor="@color/white"
             android:onClick="onDoneClick" />
 
         <Button
             style="@style/edit_button"
             android:id="@+id/cancel"
+            android:background="#dfd0e9"
             android:text="Cancel"
+            android:textColor="@color/white"
             android:onClick="onCancelClick" />
 
     </LinearLayout>

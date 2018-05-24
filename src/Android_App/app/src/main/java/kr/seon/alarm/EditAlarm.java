@@ -105,9 +105,6 @@ public class EditAlarm extends Activity {
         StrictMode.setThreadPolicy(policy);
 
 
-
-
-
         mTitle = (EditText) findViewById(R.id.title); //목소리로 바꿀 text내용
         mTextViewResult = (TextView)findViewById(R.id.textView_result);//서버 결과 창
         mAlarmEnabled = (CheckBox) findViewById(R.id.alarm_checkbox);
@@ -216,8 +213,6 @@ public class EditAlarm extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
 
         //유인나 목소리 선택됨을 서버로 보내기 코드
         inna = "유인나 목소리";

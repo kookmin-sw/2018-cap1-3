@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Alarm</string>
+    <string name="app_name">Dalarm</string>
 
     <string-array name="pref_alarm_play_time_entries">
         <item>10 seconds</item>

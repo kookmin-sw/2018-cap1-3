@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,9 +36,6 @@ public class MainActivity extends Activity {
     private final int EDIT_ALARM_ACTIVITY = 1;
     private final int PREFERENCES_ACTIVITY = 2;
 
-//    private final int CONTEXT_MENU_EDIT = 0;
-//    private final int CONTEXT_MENU_DELETE = 1;
-//    private final int CONTEXT_MENU_DUPLICATE = 2;
     public int del_pos;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -109,63 +107,6 @@ public class MainActivity extends Activity {
             mAlarmListAdapter.onSettingsUpdated();
         }
     }
-//
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        if (R.id.menu_settings == item.getItemId()) {
-//            Intent intent = new Intent(getBaseContext(), Preferences.class);
-//            startActivityForResult(intent, PREFERENCES_ACTIVITY);
-//            return true;
-//        } else {
-//            return super.onOptionsItemSelected(item);
-//        }
-//    }
-//
-//    @Override
-//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-//        if (v.getId() == R.id.alarm_list) {
-//            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-//
-//            menu.setHeaderTitle(mAlarmListAdapter.getItem(info.position).getTitle());
-//            menu.add(Menu.NONE, CONTEXT_MENU_EDIT, Menu.NONE, "Edit");
-//            menu.add(Menu.NONE, CONTEXT_MENU_DELETE, Menu.NONE, "Delete");
-//            menu.add(Menu.NONE, CONTEXT_MENU_DUPLICATE, Menu.NONE, "Duplicate");
-//        }
-//    }
-//
-//    @Override
-//    public boolean onContextItemSelected(MenuItem item) {
-//        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-//        int index = item.getItemId();
-//
-//        if (index == CONTEXT_MENU_EDIT) {
-//            Intent intent = new Intent(getBaseContext(), EditAlarm.class);
-//
-//            mCurrentAlarm = mAlarmListAdapter.getItem(info.position);
-//            mCurrentAlarm.toIntent(intent);
-//            startActivityForResult(intent, EDIT_ALARM_ACTIVITY);
-//        } else if (index == CONTEXT_MENU_DELETE) {
-//            mAlarmListAdapter.delete(info.position);
-//        } else if (index == CONTEXT_MENU_DUPLICATE) {
-//            Alarm alarm = mAlarmListAdapter.getItem(info.position);
-//            Alarm newAlarm = new Alarm(this);
-//            Intent intent = new Intent();
-//
-//            alarm.toIntent(intent);
-//            newAlarm.fromIntent(intent);
-//            newAlarm.setTitle(alarm.getTitle() + " (copy)");
-//            mAlarmListAdapter.add(newAlarm);
-//        }
-//
-//        return true;
-//    }
 
     private AdapterView.OnItemLongClickListener mListOnItemLongClickListener = new AdapterView.OnItemLongClickListener() {
         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
