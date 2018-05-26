@@ -23,7 +23,8 @@ public class AlarmReceiver extends BroadcastReceiver
         Log.i(TAG, "AlarmReceiver.onReceive('" + alarm.getTitle() + "')");
 
         // Sending alarm file name
-        newIntent.putExtra("file_name",alarm.getTitle());
+        newIntent.putExtra("file_name",alarm.getVoice_model()+"_"+alarm.getTitle());
+        Log.d("testing2",alarm.getVoice_model());
 
         context.startActivity(newIntent);
     }

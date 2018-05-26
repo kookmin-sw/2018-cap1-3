@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="voice">
+        <item>유인나</item>
+        <item>박명수</item>
+        <item>손석희</item>
+        <item>강승군</item>
+        <item>남병욱</item>
+    </string-array>
+
+</resources>

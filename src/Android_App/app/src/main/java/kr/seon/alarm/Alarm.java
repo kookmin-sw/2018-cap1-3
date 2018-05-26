@@ -19,6 +19,7 @@ public class Alarm implements Comparable<Alarm>
     private String mTitle;
     private long mDate;
     private boolean mEnabled;
+    private String voice_model;
     private int mOccurence;
     private int mDays;
     private long mNextOccurence;
@@ -34,6 +35,7 @@ public class Alarm implements Comparable<Alarm>
         mContext = context;
         mId = 0;
         mTitle = "";
+        voice_model = "";
         mDate = System.currentTimeMillis();
         mEnabled = true;
         mOccurence = ONCE;
@@ -55,12 +57,14 @@ public class Alarm implements Comparable<Alarm>
     {
         return mTitle;
     }
+    public String getVoice_model(){return voice_model;}
 
     public void setTitle(String title)
     {
         mTitle = title;
     }
 
+    public void setVoice_model(String nvoice_model) {voice_model = nvoice_model;}
     public int getOccurence()
     {
         return mOccurence;
@@ -179,6 +183,7 @@ public class Alarm implements Comparable<Alarm>
         intent.putExtra("com.taradov.alarmme.alarm", mEnabled);
         intent.putExtra("com.taradov.alarmme.occurence", mOccurence);
         intent.putExtra("com.taradov.alarmme.days", mDays);
+
     }
 
     public void fromIntent(Intent intent)

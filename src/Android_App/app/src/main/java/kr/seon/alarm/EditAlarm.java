@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -59,12 +60,11 @@ public class EditAlarm extends Activity {
     private static String TAG = "Server_Test";
 
     private EditText mTitle;
+    private String voice_model;
     private CheckBox mAlarmEnabled;
 
-    private CheckBox mVoiceChoice_inna;//유인나
     private TextView mTextViewResult; //서버결과창
 
-    private Spinner mOccurence;
     private Button mDateButton;
     private Button mTimeButton;
     private ToggleButton Day_0, Day_1, Day_2, Day_3, Day_4, Day_5, Day_6;
@@ -78,7 +78,7 @@ public class EditAlarm extends Activity {
     private int mDay;
     private int mHour;
     private int mMinute;
-
+    Spinner Voice_spinner;
     static final int DATE_DIALOG_ID = 0;
     static final int TIME_DIALOG_ID = 1;
     static final int DAYS_DIALOG_ID = 2;
@@ -90,7 +90,7 @@ public class EditAlarm extends Activity {
     private BufferedReader socketIn;
     private PrintWriter socketOut;
     private int port = 35357;
-    private final String ip = "203.246.112.106";
+    private final String ip = "13.125.237.51";
     private MyHandler myHandler;
     private MyThread myThread;
 
@@ -108,8 +108,6 @@ public class EditAlarm extends Activity {
         mTitle = (EditText) findViewById(R.id.title); //목소리로 바꿀 text내용
         mTextViewResult = (TextView)findViewById(R.id.textView_result);//서버 결과 창
         mAlarmEnabled = (CheckBox) findViewById(R.id.alarm_checkbox);
-        mVoiceChoice_inna = (CheckBox) findViewById(R.id.voice_checkbox_inna);//유인나
-        mOccurence = (Spinner) findViewById(R.id.occurence_spinner);
         mDateButton = (Button) findViewById(R.id.date_button);
         mTimeButton = (Button) findViewById(R.id.time_button);
 
@@ -121,15 +119,10 @@ public class EditAlarm extends Activity {
         mTitle.setText(mAlarm.getTitle());
         mTitle.addTextChangedListener(mTitleChangedListener);
 
-        mOccurence.setSelection(mAlarm.getOccurence());
-        mOccurence.setOnItemSelectedListener(mOccurenceSelectedListener);
+
 
         mAlarmEnabled.setChecked(mAlarm.getEnabled());
         mAlarmEnabled.setOnCheckedChangeListener(mAlarmEnabledChangeListener);
-
-        //유인나 목소리 선택
-        mVoiceChoice_inna.setChecked(mAlarm.getEnabled());
-        mVoiceChoice_inna.setOnCheckedChangeListener(mVoiceChoice_innaChangeListener);
 
         mCalendar = new GregorianCalendar();
         mCalendar.setTimeInMillis(mAlarm.getDate());
@@ -138,6 +131,29 @@ public class EditAlarm extends Activity {
         mDay = mCalendar.get(Calendar.DAY_OF_MONTH);
         mHour = mCalendar.get(Calendar.HOUR_OF_DAY);
         mMinute = mCalendar.get(Calendar.MINUTE);
+
+
+
+        Voice_spinner = (Spinner)findViewById(R.id.spinner);
+
+        //스피너 어댑터 설정
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.voice,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Voice_spinner.setAdapter(adapter);
+
+        //스피너 이벤트 발생
+        Voice_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //아이템 선택시
+                mAlarm.setVoice_model(Voice_spinner.getSelectedItem().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                //아이템 선택안할시
+            }
+        });
 
         updateButtons();
     }
@@ -214,15 +230,14 @@ public class EditAlarm extends Activity {
             e.printStackTrace();
         }
 
-        //유인나 목소리 선택됨을 서버로 보내기 코드
-        inna = "유인나 목소리";
+        //선택된 목소리와 텍스트를 서버로 보내기 코드
+
+
         String Convert_Text = mTitle.getText().toString();
-
-        socketOut.println(Convert_Text);
-
-        InsertData task = new InsertData();
-        task.execute(inna, Convert_Text);
-
+        mAlarm.setVoice_model(Voice_spinner.getSelectedItem().toString());
+        String ret =  mAlarm.getVoice_model() + "_" +Convert_Text;
+        socketOut.println(ret);
+        Log.d("testing11",mAlarm.getVoice_model());
         finish();
     }
 
