@@ -66,7 +66,7 @@ public class EditAlarm extends Activity {
     private String voice_model;
 
 
-    private TextView mVoiceType; //서버결과창
+    private TextView mVoiceType; //?�버결과�?
     private TextView mAlarmText;
 
 
@@ -87,10 +87,10 @@ public class EditAlarm extends Activity {
     static final int DATE_DIALOG_ID = 0;
     static final int TIME_DIALOG_ID = 1;
     static final int DAYS_DIALOG_ID = 2;
-    //서버로 보내기위한 String 변수
+
     public String inna;
 
-    //  TCP연결 관련
+    //  TCP?�결 관??
     private Socket clientSocket;
     private BufferedReader socketIn;
     private PrintWriter socketOut;
@@ -110,14 +110,14 @@ public class EditAlarm extends Activity {
         StrictMode.setThreadPolicy(policy);
 
 
-        mTitle = (EditText) findViewById(R.id.title); //목소리로 바꿀 text내용
+        mTitle = (EditText) findViewById(R.id.title); //목소리로 바�? text?�용
 
         mDateButton = (Button) findViewById(R.id.date_button);
         mTimeButton = (Button) findViewById(R.id.time_button);
         mAlarmText = (TextView) findViewById(R.id.alarmtext);
         mVoiceType = (TextView) findViewById(R.id.voicetype);
 
-        Typeface typeFace = Typeface.createFromAsset(getAssets(), "SDMiSaeng.ttf");  //asset > fonts 폴더 내 폰트파일 적용
+        Typeface typeFace = Typeface.createFromAsset(getAssets(), "SDMiSaeng.ttf");  //asset > fonts ?�더 ???�트?�일 ?�용
         mDateButton.setTypeface(typeFace);
         mTimeButton.setTypeface(typeFace);
         mAlarmText.setTypeface(typeFace);
@@ -150,22 +150,22 @@ public class EditAlarm extends Activity {
 
 
 
-        //스피너 어댑터 설정
+        //?�피???�댑???�정
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.voice,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Voice_spinner.setAdapter(adapter);
 
-        //스피너 이벤트 발생
+        //?�피???�벤??발생
         Voice_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //아이템 선택시
+                //?�이???�택??
                 mAlarm.setVoice_model(Voice_spinner.getSelectedItem().toString());
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                //아이템 선택안할시
+                //?�이???�택?�할??
             }
         });
 
@@ -178,9 +178,9 @@ public class EditAlarm extends Activity {
         public void run() {
             while (true) {
                 try {
-                    // InputStream의 값을 읽어와서 data에 저장
+                    // InputStream??값을 ?�어?�??data???�??
                     String data = socketIn.readLine();
-                    // Message 객체를 생성, 핸들러에 정보를 보낼 땐 이 메세지 객체를 이용
+                    // Message 객체�??�성, ?�들?�에 ?�보�?보낼 ????메세지 객체�??�용
                     Message msg = myHandler.obtainMessage();
                     msg.obj = data;
                     myHandler.sendMessage(msg);
@@ -244,7 +244,7 @@ public class EditAlarm extends Activity {
             e.printStackTrace();
         }
 
-        //선택된 목소리와 텍스트를 서버로 보내기 코드
+        //?�택??목소리�? ?�스?��? ?�버�?보내�?코드
 
 
         String ret = mAlarm.getTitle().toString();
@@ -313,7 +313,7 @@ public class EditAlarm extends Activity {
             mAlarm.setEnabled(isChecked);
         }
     };
-    //유인나 목소리 선택
+    //?�인??목소�??�택
     private CompoundButton.OnCheckedChangeListener mVoiceChoice_innaChangeListener = new CompoundButton.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

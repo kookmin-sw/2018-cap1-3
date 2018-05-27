@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -122,6 +122,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <Spinner
                     app:layout_widthPercent="50%"
                     style="@android:style/Widget.Holo.Light.Spinner"
@@ -138,11 +139,22 @@
 
             <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-
-
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
+                <android.support.percent.PercentRelativeLayout
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:id="@+id/time_button"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        app:layout_widthPercent="40%"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:onClick="onTimeClick" />
+
+                </android.support.percent.PercentRelativeLayout>
 
                 <TextView
                     app:layout_widthPercent="70%"
@@ -171,11 +183,9 @@
 
 
 
-
         </LinearLayout>
 
     </android.support.percent.PercentRelativeLayout>
-
 
 
 </LinearLayout>
