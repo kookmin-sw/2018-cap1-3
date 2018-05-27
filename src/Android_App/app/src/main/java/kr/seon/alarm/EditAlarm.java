@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -45,6 +46,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -61,9 +64,11 @@ public class EditAlarm extends Activity {
 
     private EditText mTitle;
     private String voice_model;
-    private CheckBox mAlarmEnabled;
 
-    private TextView mTextViewResult; //서버결과창
+
+    private TextView mVoiceType; //서버결과창
+    private TextView mAlarmText;
+
 
     private Button mDateButton;
     private Button mTimeButton;
@@ -106,10 +111,18 @@ public class EditAlarm extends Activity {
 
 
         mTitle = (EditText) findViewById(R.id.title); //목소리로 바꿀 text내용
-        mTextViewResult = (TextView)findViewById(R.id.textView_result);//서버 결과 창
-        mAlarmEnabled = (CheckBox) findViewById(R.id.alarm_checkbox);
+
         mDateButton = (Button) findViewById(R.id.date_button);
         mTimeButton = (Button) findViewById(R.id.time_button);
+        mAlarmText = (TextView) findViewById(R.id.alarmtext);
+        mVoiceType = (TextView) findViewById(R.id.voicetype);
+
+        Typeface typeFace = Typeface.createFromAsset(getAssets(), "SDMiSaeng.ttf");  //asset > fonts 폴더 내 폰트파일 적용
+        mDateButton.setTypeface(typeFace);
+        mTimeButton.setTypeface(typeFace);
+        mAlarmText.setTypeface(typeFace);
+        mVoiceType.setTypeface(typeFace);
+
 
         mAlarm = new Alarm(this);
         mAlarm.fromIntent(getIntent());
@@ -121,8 +134,7 @@ public class EditAlarm extends Activity {
 
 
 
-        mAlarmEnabled.setChecked(mAlarm.getEnabled());
-        mAlarmEnabled.setOnCheckedChangeListener(mAlarmEnabledChangeListener);
+
 
         mCalendar = new GregorianCalendar();
         mCalendar.setTimeInMillis(mAlarm.getDate());
@@ -135,6 +147,8 @@ public class EditAlarm extends Activity {
 
 
         Voice_spinner = (Spinner)findViewById(R.id.spinner);
+
+
 
         //스피너 어댑터 설정
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.voice,android.R.layout.simple_spinner_item);
@@ -233,11 +247,9 @@ public class EditAlarm extends Activity {
         //선택된 목소리와 텍스트를 서버로 보내기 코드
 
 
-        String Convert_Text = mTitle.getText().toString();
-        mAlarm.setVoice_model(Voice_spinner.getSelectedItem().toString());
-        String ret =  mAlarm.getVoice_model() + "_" +Convert_Text;
+        String ret = mAlarm.getTitle().toString();
+        Log.d("test",ret);
         socketOut.println(ret);
-        Log.d("testing11",mAlarm.getVoice_model());
         finish();
     }
 
@@ -273,7 +285,7 @@ public class EditAlarm extends Activity {
 
     private TextWatcher mTitleChangedListener = new TextWatcher() {
         public void afterTextChanged(Editable s) {
-            mAlarm.setTitle(mTitle.getText().toString());
+            mAlarm.setTitle(Voice_spinner.getSelectedItem().toString() +"_"+mTitle.getText().toString());
         }
 
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -310,11 +322,20 @@ public class EditAlarm extends Activity {
     };
 
     private void updateButtons() {
-        if (Alarm.ONCE == mAlarm.getOccurence())
-            mDateButton.setText(mDateTime.formatDate(mAlarm));
-        else if (Alarm.WEEKLY == mAlarm.getOccurence())
-            mDateButton.setText(mDateTime.formatDays(mAlarm));
-        mTimeButton.setText(mDateTime.formatTime(mAlarm));
+        if (Alarm.ONCE == mAlarm.getOccurence()) {
+            String temp = mDateTime.formatDate(mAlarm);
+            String[] tmp = temp.split("\\s");
+            mDateButton.setText(tmp[3] + " "+ tmp[1] + " "+ tmp[2] + " "+ tmp[0]);
+        }
+        else if (Alarm.WEEKLY == mAlarm.getOccurence()) {
+            String temp = mDateTime.formatDays(mAlarm);
+            String[] tmp = temp.split("\\s");
+            mDateButton.setText(tmp[3] + " "+ tmp[1] + " "+ tmp[2] + " "+ tmp[0]);
+
+        }
+        String temp = mDateTime.formatTime(mAlarm);
+        String[] tmp = temp.split("\\s");
+        mTimeButton.setText(tmp[1] + " "+ tmp[0]);
     }
 
     private Dialog DaysPickerDialog() {
@@ -342,98 +363,7 @@ public class EditAlarm extends Activity {
 
         return builder.create();
     }
-    //서버로 데이터 전송 코드
-    class InsertData extends AsyncTask<String, Void, String> {
-        ProgressDialog progressDialog;
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-            progressDialog = ProgressDialog.show(EditAlarm.this,
-                    "Please Wait", null, true, true);
-        }
-
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-
-            progressDialog.dismiss();
-            mTextViewResult.setText(result);
-            Log.d(TAG, "POST response  - " + result);
-        }
-
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            String name = (String)params[0];
-            String address = (String)params[1];
-
-            String serverURL = "http://203.246.112.106/insert.php";
-            String postParameters = "voice=" + name + "&message=" + address;
-
-
-            try {
-
-                URL url = new URL(serverURL);
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-
-
-                httpURLConnection.setReadTimeout(5000);
-                httpURLConnection.setConnectTimeout(5000);
-                httpURLConnection.setRequestMethod("POST");
-                //httpURLConnection.setRequestProperty("content-type", "application/json");
-                httpURLConnection.setDoInput(true);
-                httpURLConnection.connect();
-
-
-                OutputStream outputStream = httpURLConnection.getOutputStream();
-                outputStream.write(postParameters.getBytes("UTF-8"));
-                outputStream.flush();
-                outputStream.close();
-
-
-                int responseStatusCode = httpURLConnection.getResponseCode();
-                Log.d(TAG, "POST response code - " + responseStatusCode);
-
-                InputStream inputStream;
-
-                if(responseStatusCode == HttpURLConnection.HTTP_OK) {
-                    inputStream = httpURLConnection.getInputStream();
-                }
-                else{
-                    inputStream = httpURLConnection.getErrorStream();
-                }
-
-
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
-                StringBuilder sb = new StringBuilder();
-                String line = null;
-
-                while((line = bufferedReader.readLine()) != null){
-                    sb.append(line);
-                }
-
-
-                bufferedReader.close();
-
-
-                return sb.toString();
-
-
-            } catch (Exception e) {
-
-                Log.d(TAG, "InsertData: Error ", e);
-
-                return new String("Error: " + e.getMessage());
-            }
-
-        }
-    }
 
 
 }

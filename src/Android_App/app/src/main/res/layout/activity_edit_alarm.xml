@@ -6,114 +6,176 @@
     android:layout_height="fill_parent"
     android:background="#dfd0e9">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_height="0dp"
-        android:layout_width="fill_parent"
-        android:layout_weight="1">
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:padding="6sp"
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:paddingTop="8sp"
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/spinner"
-                    android:layout_weight="1" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView_result"/>
-            </LinearLayout>
-
-            <TextView
-                style="@style/widget"
-                android:text="내용"
-                android:textColor="@color/white"/>
-
-            <EditText
-                style="@style/widget"
-                android:textColor="@color/black"
-                android:id="@+id/title"
-                android:singleLine="true" />
-
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:paddingTop="8sp"
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/alarm_checkbox"
-                    android:buttonTint="@color/white"
-                    android:layout_weight="1"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:text="Alarm"
-                    android:textColor="@color/white"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:paddingTop="8sp"
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/date_button"
-                    android:background="#dfd0e9"
-                    android:layout_weight="2"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:onClick="onDateClick" />
-
-                <Button
-                    android:id="@+id/time_button"
-                    android:background="#dfd0e9"
-                    android:layout_weight="1"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:onClick="onTimeClick" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
-        android:padding="8sp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
 
-        <Button
-            style="@style/edit_button"
-            android:id="@+id/done"
-            android:background="#dfd0e9"
-            android:text="Done"
-            android:textColor="@color/white"
-            android:onClick="onDoneClick" />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border">
 
         <Button
             style="@style/edit_button"
             android:id="@+id/cancel"
             android:background="#dfd0e9"
-            android:text="Cancel"
+            android:text="취소"
             android:textColor="@color/white"
             android:onClick="onCancelClick" />
 
+        <Button
+            style="@style/edit_button"
+            android:id="@+id/done"
+            android:background="#dfd0e9"
+            android:text="저장"
+            android:textColor="@color/white"
+            android:onClick="onDoneClick" />
+
+
+
     </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:paddingTop="50dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <android.support.percent.PercentRelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:background="@drawable/rounded"
+                android:id="@+id/date_button"
+                app:layout_widthPercent="80%"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#dfd0e9"
+                android:textSize="30dp"
+                android:onClick="onDateClick" />
+
+        </android.support.percent.PercentRelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:paddingTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <android.support.percent.PercentRelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/time_button"
+                android:background="@drawable/rounded"
+                app:layout_widthPercent="80%"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#dfd0e9"
+                android:textSize="30dp"
+                android:onClick="onTimeClick" />
+
+        </android.support.percent.PercentRelativeLayout>
+
+
+    </LinearLayout>
+    <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:paddingTop="8sp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:padding="10dp"
+            android:layout_marginTop="100dp"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:layout_centerInParent="true"
+            app:layout_widthPercent="80%">
+
+            <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_widthPercent="70%"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="목소리 유형"
+                    android:id="@+id/voicetype"
+
+                    android:textSize="17dp"/>
+
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:paddingTop="8sp"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Spinner
+                    app:layout_widthPercent="50%"
+                    style="@android:style/Widget.Holo.Light.Spinner"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:textAlignment="center"
+                    />
+
+            </android.support.percent.PercentRelativeLayout>
+
+
+
+            <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_widthPercent="70%"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="알람 텍스트"
+                    android:id="@+id/alarmtext"
+                    android:textSize="17dp"/>
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    style="@style/widget"
+                    app:layout_widthPercent="70%"
+                    android:textColor="@color/black"
+                    android:id="@+id/title"
+                    android:layout_centerInParent="true"/>
+
+            </android.support.percent.PercentRelativeLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+    </android.support.percent.PercentRelativeLayout>
+
+
 
 </LinearLayout>

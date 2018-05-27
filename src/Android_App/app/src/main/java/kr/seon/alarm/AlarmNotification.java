@@ -69,7 +69,7 @@ public class AlarmNotification extends Activity
         //MediaPlayer mediaPlayer = new MediaPlayer(); //위에 MediaPlayer가 있어서 이거 주석처리 했어요.
 
         //사용자가 정한 메세지로 음성파일이 생성되므로 알람 메세지를 가져온다.
-        String url = "http://13.125.237.51/" + mAlarm.getVoice_model() + "_"+mAlarm.getTitle() +".wav";
+        String url = "http://13.125.237.51/" + n_intent.getStringExtra("file_name") +".wav";
         Log.d("testing3",url);
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -80,6 +80,7 @@ public class AlarmNotification extends Activity
         }
         try {
              mediaPlayer.prepare();
+            mediaPlayer.setLooping(true);
         } catch (IOException e) {
              e.printStackTrace();
         }
