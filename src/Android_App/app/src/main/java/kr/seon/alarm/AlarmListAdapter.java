@@ -136,7 +136,7 @@ class AlarmListAdapter extends BaseAdapter
 
     holder.title.setText(alarm.getTitle());
     holder.title.setTextColor(Color.WHITE);
-    holder.details.setText(mDateTime.formatDetails(alarm) + (alarm.getEnabled() ? "" : " [disabled]"));
+    holder.details.setText(mDateTime.formatDetails(alarm) + (alarm.getEnabled() ? "" : ""));
     holder.mSwitch.setChecked(alarm.getEnabled());
 
     if (alarm.getOutdated())

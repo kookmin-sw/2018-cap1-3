@@ -51,7 +51,6 @@ public class MainActivity extends Activity {
 
         mAlarmList = (ListView) findViewById(R.id.alarm_list);
 
-
         mAlarmListAdapter = new AlarmListAdapter(this);
         mAlarmList.setAdapter(mAlarmListAdapter);
         mAlarmList.setOnItemLongClickListener(mListOnItemLongClickListener);
@@ -112,6 +111,7 @@ public class MainActivity extends Activity {
         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
             new AlertDialog.Builder(MainActivity.this).setTitle("삭제").setMessage("삭제하시겠습니까")
                     .setPositiveButton("예", mDelClick).setNegativeButton("아니오", mDelClick).show();
+                    del_pos = position;
             return true;
         }
     };

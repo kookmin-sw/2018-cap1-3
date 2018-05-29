@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:padding="8dip"
-    android:background="#dfd0e9"
+    android:background="@drawable/listradius"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
   <FrameLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
     <TextView
         style="@style/list_item"
         android:id="@+id/item_details"
-        android:textSize="30dip"
+        android:textSize="20sp"
         android:textColor="@color/alarm_details"
         android:textStyle="bold"/>
 
     <Switch
         android:id="@+id/on_off_switch"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="48sp"
+        android:layout_height="30sp"
         android:layout_gravity="center_vertical|end"
         android:focusable="false"
         android:checked="true" />
@@ -27,7 +28,7 @@
     <TextView
         style="@style/list_item"
         android:id="@+id/item_title"
-        android:textSize="18dip"
+        android:textSize="13sp"
         android:textStyle="bold">
     </TextView>
 

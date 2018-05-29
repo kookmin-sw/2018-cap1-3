@@ -3,13 +3,18 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">#cca1d6</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="colorPrimary">#f40490</item>
+        <item name="colorPrimaryDark">#fa5e8d</item>
+        <item name="colorAccent">#f40490</item>
     </style>
 
+    <style name="MyActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/backg</item>
+
+    </style>
     <style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar">
-        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowBackground">@drawable/splash_f</item>
     </style>
 
     <style name="widget">
@@ -19,12 +24,12 @@
 
     <style name="edit_button">
         <item name="android:layout_width">0sp</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:background">@android:drawable/btn_default</item>
     </style>
 
-    <style name="list_item" background="#dfd0e9">
+    <style name="list_item" background="@color/white">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>

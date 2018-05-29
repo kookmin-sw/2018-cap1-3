@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="4dip"
-    android:background="#dfd0e9"
+    android:background="@drawable/backg"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:scaleType="fitXY"
         android:id="@+id/img_voice"/>
 
     <TextView
@@ -28,26 +29,26 @@
         android:layout_width="fill_parent"
         android:layout_height="0sp">
 
-    <View
-        android:layout_weight="1"
-        android:layout_width="0sp"
-        android:layout_height="wrap_content" />
+        <View
+            android:layout_weight="1"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/dismiss_alarm"
-        android:layout_weight="2"
-        android:layout_width="0sp"
-        android:layout_height="wrap_content"
-        android:background="#dfd0e9"
-        android:text="확인"
-        android:textColor="@color/white"
-        android:onClick="onDismissClick" />
+        <Button
+            android:id="@+id/dismiss_alarm"
+            android:layout_weight="2"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:onClick="onDismissClick" />
 
-    <View
-        android:layout_weight="1"
-        android:layout_width="0sp"
-        android:layout_height="wrap_content" />
+        <View
+            android:layout_weight="1"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content" />
 
-</LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
