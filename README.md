@@ -17,6 +17,7 @@
 ### II 팀 소개
 - 지도 김준호 교수님
 
+[ Developers ]
 
 - 김세희(팀장) 
 
@@ -25,7 +26,6 @@
 
 e-mail : sara940569@gmail.com
 
-role : application UI design
 
 
 - 강승군 
@@ -35,7 +35,6 @@ role : application UI design
 
 e-mail : suzzyyy@naver.com
 
-role : build server
 
 
 - 남병욱 
@@ -45,7 +44,6 @@ role : build server
 
 e-mail : skaquddnr21@naver.com
 
-role : application Implementation
 
 
 - 위광진
@@ -55,7 +53,6 @@ role : application Implementation
 
 e-mail : wgj2050@gmail.com
 
-role : Deep Learning Research
 
 
 ### III Abstract 
@@ -69,3 +66,5 @@ We are going to use Text-To-Speech (TTS) and Voice Deep Learning technology base
 URL : https://www.youtube.com/watch?v=NLgzlazFzjI&feature=youtu.be
 
 ### V  결과 영상
+
+URL : https://youtu.be/jDyjhYYQPxU
