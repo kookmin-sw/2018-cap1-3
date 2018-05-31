@@ -26,7 +26,9 @@
 ```
 e-mail : sara940569@gmail.com
 ```
-
+```
+Insights의 총 commit에 포함되지 않은 contributor: Sara Kim            // 깃허브 데스크탑 사용으로 반영되지 않았음
+```
 
 - 강승군 
 
@@ -35,7 +37,9 @@ e-mail : sara940569@gmail.com
 ```
 e-mail : suzzyyy@naver.com
 ```
-
+```
+Insights의 총 commit에 포함되지 않은 contributor: 20143024           // 깃허브 데스크탑 사용으로 반영되지 않았음 
+```
 
 - 남병욱 
 
