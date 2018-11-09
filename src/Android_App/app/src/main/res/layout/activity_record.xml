@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backg">
+
+    <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:paddingTop="8sp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:padding="10dp"
+            android:layout_marginTop="100dp"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:layout_centerInParent="true"
+            app:layout_widthPercent="80%">
+
+            <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_widthPercent="70%"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="알람 제목"
+                    android:id="@+id/alarmtitle"
+                    android:textSize="17dp"/>
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    style="@style/widget"
+                    app:layout_widthPercent="70%"
+                    android:textColor="@color/black"
+                    android:id="@+id/title"
+                    android:layout_centerInParent="true"/>
+
+            </android.support.percent.PercentRelativeLayout>
+
+
+        </LinearLayout>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border">
+
+        <Button
+            style="@style/edit_button"
+            android:id="@+id/record"
+            android:background="@drawable/backg"
+            android:text="녹음"
+            android:textColor="@color/white"
+            android:onClick="onCancelClick" />
+
+        <Button
+            style="@style/edit_button"
+            android:id="@+id/stop"
+            android:background="@drawable/backg"
+            android:text="정지"
+            android:textColor="@color/white"
+            android:onClick="onDoneClick" />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
