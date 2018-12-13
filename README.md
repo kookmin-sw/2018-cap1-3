@@ -71,4 +71,8 @@ We are going to use Text-To-Speech (TTS) and Voice Deep Learning technology base
 
 ## V  결과 시연 영상
 
+### version.1
 [![Video Label](/doc/pic/final_video.PNG)](https://youtu.be/jDyjhYYQPxU)
+
+### version.2
+[![Video Label](/doc/pic/final_video2.PNG)](https://youtu.be/InL_v5FGKW4)
